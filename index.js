@@ -193,6 +193,8 @@ data.db[0].data.posts.forEach(function(post) {
   }
   // Currently the ghost export file does not include markdown
   post.markdown = h2m(post.html);
+  // make tag array into yml format
+  post.tagArray = "\n" + post.tags.map(t => `  - "${t}"`).join("\n")
   // File content.
   var fileContent = postTemplate({
     post: post
