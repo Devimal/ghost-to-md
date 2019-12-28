@@ -176,6 +176,7 @@ data.db[0].data.posts.forEach(function(post) {
 
   post.title =
     post.title.indexOf(':') > 1 ? '"' + post.title + '"' : post.title;
+  post.title = JSON.stringify(post.title);
 
   // Convert to ISO string.
   post.publishedAt = new Date(post.published_at).toISOString();
